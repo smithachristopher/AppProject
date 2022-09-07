@@ -12,10 +12,6 @@ import org.openqa.selenium.support.PageFactory;
 public class CategoriesPage {
 
     protected  AppiumDriver driverAppium;
-
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/androidx.appcompat.widget.LinearLayoutCompat/android.widget.ImageButton")
-    public MobileElement hamburger;
-
     @FindBy(xpath = "//android.widget.ImageView[@content-desc=\"More options\"]")
     public MobileElement categories;
 
@@ -29,6 +25,7 @@ public class CategoriesPage {
     public String getUrl(){
         return  driverAppium.getCurrentUrl();
     }
+
     public void scrollAndClick(String visibleText) {
         driverAppium.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+visibleText+"\").instance(0))")).click();
     }

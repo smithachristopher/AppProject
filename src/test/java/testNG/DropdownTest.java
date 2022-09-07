@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import pages.CategoriesPage;
 import pages.DashboardPage;
+import pages.SportsPage;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -24,7 +25,7 @@ public class DropdownTest extends BaseClass {
 
         try{
             WebDriverWait wait = new WebDriverWait(driver, 60);
-            wait.until(ExpectedConditions.visibilityOf(dashboardPage.stratergy)).click();
+            wait.until(ExpectedConditions.visibilityOf(dashboardPage.categories)).click();
 
         }
         catch (ElementNotVisibleException e)
@@ -34,8 +35,10 @@ public class DropdownTest extends BaseClass {
 
 
         CategoriesPage categoriesPage=new CategoriesPage();
-
-        Select select= new Select(categoriesPage.categories);
+        categoriesPage.scrollAndClick("Sports");
+        SportsPage sportsPage = new SportsPage();
+        sportsPage.hamburger.isDisplayed();
+        Select select= new Select(sportsPage.hamburger);
         select.selectByVisibleText("Issues");
 
     }
