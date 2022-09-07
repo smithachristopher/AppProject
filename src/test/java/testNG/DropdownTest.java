@@ -25,8 +25,9 @@ public class DropdownTest extends BaseClass {
 
         try{
             WebDriverWait wait = new WebDriverWait(driver, 60);
-            wait.until(ExpectedConditions.visibilityOf(dashboardPage.categories)).click();
-
+            MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Categories");
+            el1.isDisplayed();
+            el1.click();
         }
         catch (ElementNotVisibleException e)
         {
