@@ -1,4 +1,4 @@
-package testsuite.testNG;
+package testNG;
 
 import Driver.BaseClass;
 import io.appium.java_client.MobileElement;
@@ -24,7 +24,6 @@ public class DropdownTest extends BaseClass {
 
         try{
             WebDriverWait wait = new WebDriverWait(driver, 60);
-           // dashboardPage.categories.isEnabled();
             wait.until(ExpectedConditions.visibilityOf(dashboardPage.stratergy)).click();
 
         }
@@ -35,8 +34,7 @@ public class DropdownTest extends BaseClass {
 
 
         CategoriesPage categoriesPage=new CategoriesPage();
-       // categoriesPage.categories.isDisplayed();
-        categoriesPage.categories.click();
+
         Select select= new Select(categoriesPage.categories);
         select.selectByVisibleText("Issues");
 

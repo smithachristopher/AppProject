@@ -1,4 +1,4 @@
-package testsuite.testNG;
+package testNG;
 
 import Driver.BaseClass;
 import org.openqa.selenium.Alert;
